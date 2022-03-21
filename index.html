@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+      lang="en"
+      x-data="{darkMode: localStorage.getItem('dark') === 'true'}"
+      x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
+      x-bind:class="{'dark': darkMode}"
+>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
@@ -68,24 +73,7 @@
   <title>Frontend Mentor | [Challenge Name Here]</title>
 
 </head>
-<!--<body-->
-<!--        x-data="{dark: false}"-->
-<!--        x-init="-->
-<!--      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {-->
-<!--        document.documentElement.classList.add('dark')-->
-<!--      } else {-->
-<!--        document.documentElement.classList.remove('dark')-->
-<!--      }-->
-<!--      localStorage.theme = 'light'-->
-<!--      localStorage.theme = 'dark'-->
-<!--      localStorage.removeItem('theme')-->
-<!--"-->
-<!--        :class="dark ? 'antialiased dark' : 'antialiased'"-->
-<!--&gt;-->
-<body
-    x-data="{dark: false}"
-    :class="dark ? 'antialiased dark' : 'antialiased'"
->
+<body class="antialiased bg-white dark:bg-blue-900 dark:text-white transition-colors ease-in-out duration-200">
   <header class="bg-blue-100 dark:bg-blue-800 dark:text-white transition-colors ease-in-out duration-200">
     <div>
       <h1>Social Media Dashboard</h1>
@@ -94,23 +82,23 @@
     <div>
       <span>Dark Mode</span>
       <button
-          x-on:click="dark = ! dark"
-          type="button"
-          role="switch"
-          aria-checked="false"
-          :class="dark ? 'bg-gradient-to-r from-toggle-dark-start to-toggle-dark-stop' : 'bg-toggle-light'"
-          class="dark:bg-gradient-to-r dark:from-toggle-dark-start dark:to-toggle-dark-stop relative inline-flex items-center flex-shrink-0 h-6 w-12 rounded-full cursor-pointer transition ease-in-out duration-200 focus:outline-none hover:bg-gradient-to-r hover:from-toggle-dark-start hover:to-toggle-dark-stop"
+              x-on:click="darkMode = ! darkMode"
+              type="button"
+              role="switch"
+              aria-checked="false"
+              :class="darkMode ? 'bg-gradient-to-r from-toggle-dark-start to-toggle-dark-stop' : 'bg-toggle-light'"
+              class="dark:bg-gradient-to-r dark:from-toggle-dark-start dark:to-toggle-dark-stop relative inline-flex items-center flex-shrink-0 h-6 w-12 rounded-full cursor-pointer transition ease-in-out duration-200 focus:outline-none hover:bg-gradient-to-r hover:from-toggle-dark-start hover:to-toggle-dark-stop"
       >
         <span class="sr-only">Toggle dark mode</span>
         <span
-            aria-hidden="true"
-            :class="dark ? 'translate-x-6' : 'translate-x-1'"
-            class="pointer-events-none inline-block h-4.5 w-4.5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200"
+                aria-hidden="true"
+                :class="darkMode ? 'translate-x-6' : 'translate-x-1'"
+                class="pointer-events-none inline-block h-4.5 w-4.5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200"
         ></span>
       </button>
     </div>
   </header>
-  <section class="bg-white dark:bg-blue-900 dark:text-white transition-colors ease-in-out duration-200">
+  <section>
 
     @nathanf
     1987
@@ -170,8 +158,8 @@
 
   </section>
 
-  <footer class="bg-white dark:bg-blue-900 dark:text-white transition-colors ease-in-out duration-200">
-    <div class="text-center text-sm mx-auto pt-1">
+  <footer>
+    <div class="text-center text-sm mx-auto mt-1">
       Challenge by <a class="text-cyan-200 hover:text-white ease-in-out duration-150" href="https://www.frontendmentor.io/challenges/sunnyside-agency-landing-page-7yVs3B6ef" target="_blank">Frontend Mentor</a>.
       Coded by <a class="text-cyan-200 hover:text-white ease-in-out duration-150" href="https://www.frontendmentor.io/profile/wendyhamel" target="_blank">Wendy Hamel</a>.
     </div>
