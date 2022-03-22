@@ -29,10 +29,10 @@
             'md': ['1.6rem', {
               lineHeight: '1.7rem',
             }],
-            // '7.5xl': ['4rem', {
-            //   letterSpacing: '-0.04em',
-            //   lineHeight: '4.25rem',
-            // }],
+            '3.5xl': ['2.1rem', {
+              letterSpacing: '-0.04em',
+              lineHeight: '2.25rem',
+            }],
           },
         },
         fontFamily: {
@@ -77,34 +77,36 @@
 
 </head>
 <body class="antialiased bg-white text-blue-500 dark:bg-blue-900 dark:text-white transition-colors ease-in-out duration-200">
-  <header class="pt-10 px-6 bg-blue-100 rounded-b-3xl dark:bg-blue-800 dark:text-white transition-colors ease-in-out duration-200">
-    <div class="border-b border-blue-300">
-      <h1 class="text-md font-bold mb-1">Social Media Dashboard</h1>
-      <span class="block text-sm text-blue-300 font-bold mb-6 dark:text-blue-600">Total Followers: 23,004</span>
-    </div>
-    <div class="flex w-full justify-between items-center mt-6 pb-20">
-      <span class="block text-sm text-blue-300 font-bold dark:text-blue-600">Dark Mode</span>
-      <button
-              x-on:click="darkMode = ! darkMode"
-              type="button"
-              role="switch"
-              aria-checked="false"
-              :class="darkMode ? 'bg-gradient-to-r from-toggle-dark-start to-toggle-dark-stop' : 'bg-toggle-light'"
-              class="dark:bg-gradient-to-r dark:from-toggle-dark-start dark:to-toggle-dark-stop relative inline-flex items-center flex-shrink-0 h-6 w-12 rounded-full cursor-pointer transition ease-in-out duration-200 focus:outline-none hover:bg-gradient-to-r hover:from-toggle-dark-start hover:to-toggle-dark-stop"
-      >
-        <span class="sr-only">Toggle dark mode</span>
-        <span
-                aria-hidden="true"
-                :class="darkMode ? 'translate-x-1' : 'translate-x-6'"
-                class="pointer-events-none inline-block h-4.5 w-4.5 rounded-full bg-white dark:bg-blue-800 shadow transform ring-0 transition ease-in-out duration-200"
-        ></span>
-      </button>
+  <header class="pt-10 bg-blue-100 rounded-b-3xl dark:bg-blue-800 dark:text-white transition-colors ease-in-out duration-200">
+    <div class="max-w-screen-xl mx-auto flex flex-col px-6 pb-20 md:pb-40 md:flex-row md:justify-between md:items-center">
+      <div class="border-b border-blue-300 md:border-none">
+        <h1 class="text-md font-bold mb-1">Social Media Dashboard</h1>
+        <span class="block text-sm text-blue-300 font-bold mb-6 dark:text-blue-600 md:mb-0">Total Followers: 23,004</span>
+      </div>
+      <div class="flex md:grow-0 gap-4 justify-between items-center mt-6 md:mt-0">
+        <span class="block text-sm text-blue-300 font-bold dark:text-blue-600">Dark Mode</span>
+        <button
+                x-on:click="darkMode = ! darkMode"
+                type="button"
+                role="switch"
+                aria-checked="false"
+                :class="darkMode ? 'bg-gradient-to-r from-toggle-dark-start to-toggle-dark-stop' : 'bg-toggle-light'"
+                class="dark:bg-gradient-to-r dark:from-toggle-dark-start dark:to-toggle-dark-stop relative inline-flex items-center flex-shrink-0 h-6 w-12 rounded-full cursor-pointer transition ease-in-out duration-200 focus:outline-none hover:bg-gradient-to-r hover:from-toggle-dark-start hover:to-toggle-dark-stop"
+        >
+          <span class="sr-only">Toggle dark mode</span>
+          <span
+                  aria-hidden="true"
+                  :class="darkMode ? 'translate-x-1' : 'translate-x-6'"
+                  class="pointer-events-none inline-block h-4.5 w-4.5 rounded-full bg-white dark:bg-blue-800 shadow transform ring-0 transition ease-in-out duration-200"
+          ></span>
+        </button>
+      </div>
     </div>
   </header>
-  <section class="px-6 -translate-y-10 grid gap-6">
+  <section class="max-w-screen-xl mx-auto px-6 -translate-y-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4 md:-translate-y-28">
     <article class="relative rounded-lg overflow-hidden text-blue-300">
       <div class="absolute inset-x-0 h-1.5 bg-facebook"></div>
-      <div class="relative bg-blue-200 mt-1.5 flex flex-col items-center gap-6 pt-8 pb-6 dark:bg-blue-700 dark:text-blue-600">
+      <div class="relative bg-blue-200 mt-1.5 flex flex-col items-center gap-6 pt-8 pb-6 px-6 dark:bg-blue-700 dark:text-blue-600">
         <div class="flex items-center gap-2">
           <img src="images/icon-facebook.svg" alt="facebook icon">
           <span class="text-xs font-bold">@nathanf</span>
@@ -121,7 +123,7 @@
     </article>
     <article class="relative rounded-lg overflow-hidden text-blue-300">
       <div class="absolute inset-x-0 h-1.5 bg-twitter"></div>
-      <div class="relative bg-blue-200 mt-1.5 flex flex-col items-center gap-6 pt-8 pb-6 dark:bg-blue-700 dark:text-blue-600">
+      <div class="relative bg-blue-200 mt-1.5 flex flex-col items-center gap-6 pt-8 pb-6 px-6 dark:bg-blue-700 dark:text-blue-600">
         <div class="flex items-center gap-2">
           <img src="images/icon-twitter.svg" alt="twitter icon">
           <span class="text-xs font-bold">@nathanf</span>
@@ -138,7 +140,7 @@
     </article>
     <article class="relative rounded-lg overflow-hidden text-blue-300">
       <div class="absolute inset-x-0 h-1.5 bg-gradient-to-r from-instagram-start to-instagram-stop"></div>
-      <div class="relative bg-blue-200 mt-1.5 flex flex-col items-center gap-6 pt-8 pb-6 dark:bg-blue-700 dark:text-blue-600">
+      <div class="relative bg-blue-200 mt-1.5 flex flex-col items-center gap-6 pt-8 pb-6 px-6 dark:bg-blue-700 dark:text-blue-600">
         <div class="flex items-center gap-2">
           <img src="images/icon-instagram.svg" alt="instagram icon">
           <span class="text-xs font-bold">@realnathanf</span>
@@ -155,7 +157,7 @@
     </article>
     <article class="relative rounded-lg overflow-hidden text-blue-300">
       <div class="absolute inset-x-0 h-1.5 bg-youtube"></div>
-      <div class="relative bg-blue-200 mt-1.5 flex flex-col items-center gap-6 pt-8 pb-6 dark:bg-blue-700 dark:text-blue-600">
+      <div class="relative bg-blue-200 mt-1.5 flex flex-col items-center gap-6 pt-8 pb-6 px-6 dark:bg-blue-700 dark:text-blue-600">
         <div class="flex items-center gap-2">
           <img src="images/icon-youtube.svg" alt="youtube icon">
           <span class="text-xs font-bold">Nathan F.</span>
@@ -171,49 +173,123 @@
       </div>
     </article>
   </section>
-  <section class="px-6">
-
-    Overview - Today
-
-    Page Views
-    87
-    3%
-
-    Likes
-    52
-    2%
-
-    Likes
-    5462
-    2257%
-
-    Profile Views
-    52k
-    1375%
-
-    Retweets
-    117
-    303%
-
-    Likes
-    507
-    553%
-
-    Likes
-    107
-    19%
-
-    Total Views
-    1407
-    12%
-
+  <section class="max-w-screen-xl mx-auto px-6 mt-3 md:-mt-14">
+    <h2 class="text-md text-blue-300 font-bold mb-7 dark:text-white">Overview - Today</h2>
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <article class="rounded-lg bg-blue-200 mt-1.5 flex flex-col items-center gap-6 p-6 dark:bg-blue-700 dark:text-blue-600 text-blue-300">
+        <div class="flex w-full items-center justify-between gap-2">
+          <span class="text-sm font-bold">Page Views</span>
+          <img src="images/icon-facebook.svg" alt="facebook icon">
+        </div>
+        <div class="flex w-full items-baseline justify-between gap-2">
+          <span class="text-3.5xl text-blue-500 font-bold dark:text-white">87</span>
+          <div class="flex items-center gap-1">
+            <img src="images/icon-up.svg" alt="chevron up icon">
+            <span class="text-xs font-bold text-lime">3%</span>
+          </div>
+        </div>
+      </article>
+      <article class="rounded-lg bg-blue-200 mt-1.5 flex flex-col items-center gap-6 p-6 dark:bg-blue-700 dark:text-blue-600 text-blue-300">
+        <div class="flex w-full items-center justify-between gap-2">
+          <span class="text-sm font-bold">Likes</span>
+          <img src="images/icon-facebook.svg" alt="facebook icon">
+        </div>
+        <div class="flex w-full items-baseline justify-between gap-2">
+          <span class="text-3.5xl text-blue-500 font-bold dark:text-white">52</span>
+          <div class="flex items-center gap-1">
+            <img src="images/icon-down.svg" alt="chevron down icon">
+            <span class="text-xs font-bold text-red">2%</span>
+          </div>
+        </div>
+      </article>
+      <article class="rounded-lg bg-blue-200 mt-1.5 flex flex-col items-center gap-6 p-6 dark:bg-blue-700 dark:text-blue-600 text-blue-300">
+        <div class="flex w-full items-center justify-between gap-2">
+          <span class="text-sm font-bold">Likes</span>
+          <img src="images/icon-instagram.svg" alt="instagram icon">
+        </div>
+        <div class="flex w-full items-baseline justify-between gap-2">
+          <span class="text-3.5xl text-blue-500 font-bold dark:text-white">5462</span>
+          <div class="flex items-center gap-1">
+            <img src="images/icon-up.svg" alt="chevron up icon">
+            <span class="text-xs font-bold text-lime">2257%</span>
+          </div>
+        </div>
+      </article>
+      <article class="rounded-lg bg-blue-200 mt-1.5 flex flex-col items-center gap-6 p-6 dark:bg-blue-700 dark:text-blue-600 text-blue-300">
+        <div class="flex w-full items-center justify-between gap-2">
+          <span class="text-sm font-bold">Profile Views</span>
+          <img src="images/icon-instagram.svg" alt="instagram icon">
+        </div>
+        <div class="flex w-full items-baseline justify-between gap-2">
+          <span class="text-3.5xl text-blue-500 font-bold dark:text-white">52k</span>
+          <div class="flex items-center gap-1">
+            <img src="images/icon-up.svg" alt="chevron up icon">
+            <span class="text-xs font-bold text-lime">1375%</span>
+          </div>
+        </div>
+      </article>
+      <article class="rounded-lg bg-blue-200 mt-1.5 flex flex-col items-center gap-6 p-6 dark:bg-blue-700 dark:text-blue-600 text-blue-300">
+        <div class="flex w-full items-center justify-between gap-2">
+          <span class="text-sm font-bold">Retweets</span>
+          <img src="images/icon-twitter.svg" alt="twitter icon">
+        </div>
+        <div class="flex w-full items-baseline justify-between gap-2">
+          <span class="text-3.5xl text-blue-500 font-bold dark:text-white">117</span>
+          <div class="flex items-center gap-1">
+            <img src="images/icon-up.svg" alt="chevron up icon">
+            <span class="text-xs font-bold text-lime">303%</span>
+          </div>
+        </div>
+      </article>
+      <article class="rounded-lg bg-blue-200 mt-1.5 flex flex-col items-center gap-6 p-6 dark:bg-blue-700 dark:text-blue-600 text-blue-300">
+        <div class="flex w-full items-center justify-between gap-2">
+          <span class="text-sm font-bold">Likes</span>
+          <img src="images/icon-twitter.svg" alt="twitter icon">
+        </div>
+        <div class="flex w-full items-baseline justify-between gap-2">
+          <span class="text-3.5xl text-blue-500 font-bold dark:text-white">507</span>
+          <div class="flex items-center gap-1">
+            <img src="images/icon-up.svg" alt="chevron up icon">
+            <span class="text-xs font-bold text-lime">553%</span>
+          </div>
+        </div>
+      </article>
+      <article class="rounded-lg bg-blue-200 mt-1.5 flex flex-col items-center gap-6 p-6 dark:bg-blue-700 dark:text-blue-600 text-blue-300">
+        <div class="flex w-full items-center justify-between gap-2">
+          <span class="text-sm font-bold">Likes</span>
+          <img src="images/icon-youtube.svg" alt="youtube icon">
+        </div>
+        <div class="flex w-full items-baseline justify-between gap-2">
+          <span class="text-3.5xl text-blue-500 font-bold dark:text-white">107</span>
+          <div class="flex items-center gap-1">
+            <img src="images/icon-down.svg" alt="chevron down icon">
+            <span class="text-xs font-bold text-red">19%</span>
+          </div>
+        </div>
+      </article>
+      <article class="rounded-lg bg-blue-200 mt-1.5 flex flex-col items-center gap-6 p-6 dark:bg-blue-700 dark:text-blue-600 text-blue-300">
+        <div class="flex w-full items-center justify-between gap-2">
+          <span class="text-sm font-bold">Total Views</span>
+          <img src="images/icon-youtube.svg" alt="youtube icon">
+        </div>
+        <div class="flex w-full items-baseline justify-between gap-2">
+          <span class="text-3.5xl text-blue-500 font-bold dark:text-white">1407</span>
+          <div class="flex items-center gap-1">
+            <img src="images/icon-down.svg" alt="chevron down icon">
+            <span class="text-xs font-bold text-red">12%</span>
+          </div>
+        </div>
+      </article>
+    </div>
   </section>
 
-  <footer class="px-6">
-    <div class="text-center text-sm mx-auto mt-1">
-      Challenge by <a class="text-cyan-200 hover:text-white ease-in-out duration-150" href="https://www.frontendmentor.io/challenges/sunnyside-agency-landing-page-7yVs3B6ef" target="_blank">Frontend Mentor</a>.
-      Coded by <a class="text-cyan-200 hover:text-white ease-in-out duration-150" href="https://www.frontendmentor.io/profile/wendyhamel" target="_blank">Wendy Hamel</a>.
-    </div>
+  <footer class="px-6 py-2 text-blue-500 flex flex-col md:flex-row md:justify-center md:gap-2 mx-auto dark:text-blue-600 md:mt-10">
+    <p class="text-center text-xs">
+      Challenge by <a class="text-blue-300 hover:underline hover:text-blue-500 dark:text-blue-600 dark:hover:text-white ease-in-out duration-150" href="https://www.frontendmentor.io/challenges/sunnyside-agency-landing-page-7yVs3B6ef" target="_blank">Frontend Mentor</a>.
+    </p>
+    <p class="text-center text-xs">
+      Coded by <a class="text-blue-300 hover:underline hover:text-blue-500 dark:text-blue-600 dark:hover:text-white ease-in-out duration-150" href="https://www.frontendmentor.io/profile/wendyhamel" target="_blank">Wendy Hamel</a>.
+    </p>
   </footer>
 </body>
 </html>
